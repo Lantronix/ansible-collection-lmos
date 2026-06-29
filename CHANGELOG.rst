@@ -4,6 +4,17 @@ Lantronix LMOS Collection Release Notes
 
 .. contents:: Topics
 
+v1.0.2
+======
+
+Minor Changes
+-------------
+
+- ``README.md`` -- added ``Changelog`` section linking to ``CHANGELOG.rst``
+  per Red Hat Automation Hub certification feedback.
+- ``README.md`` -- replaced relative ``LICENSE`` link with absolute URL so
+  the link resolves correctly when rendered on Automation Hub.
+
 v1.0.1
 ======
 

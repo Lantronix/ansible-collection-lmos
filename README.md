@@ -195,8 +195,12 @@ This collection is maintained by the Lantronix OOB product team.
 
 **Product support:** Visit [https://www.lantronix.com/support/](https://www.lantronix.com/support/).
 
+## Changelog
+
+See [CHANGELOG.rst](https://github.com/Lantronix/ansible-collection-lmos/blob/main/CHANGELOG.rst) for a list of changes in each release.
+
 ## License
 
-Apache-2.0. See [LICENSE](LICENSE).
+Apache-2.0. See [LICENSE](https://github.com/Lantronix/ansible-collection-lmos/blob/main/LICENSE).
 
 Plugin and module files are licensed under GPL-3.0-or-later per Ansible module standards.

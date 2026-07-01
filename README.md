@@ -1,6 +1,3 @@
-> **This repository has been archived.** The project has moved to the official Lantronix organization:
-> **[github.com/Lantronix/ansible-collection-lmos](https://github.com/Lantronix/ansible-collection-lmos)**
-
 # lantronix.lmos, Ansible Collection
 
 Ansible collection for Lantronix **LMOS** (Local Manager OS) devices, including the Uplogix Local Manager product line. Provides SSH CLI connectivity without requiring `ansible_network_terminal_errors: ignore`.
@@ -23,7 +20,7 @@ Ansible collection for Lantronix **LMOS** (Local Manager OS) devices, including 
 
 ### From GitHub
 
-Clone the repository into the required Ansible collections directory structure. The path `ansible_collections/lantronix/lmos/` is required for `ansible-test` and namespace resolution to work correctly.
+Clone the repository into the required Ansible collections directory structure. The path `ansible_collections/lantronix/lmos/` is required for namespace resolution to work correctly.
 
 ```bash
 mkdir -p ~/ansible_collections/lantronix
@@ -49,14 +46,6 @@ Or:
 
 ```bash
 export ANSIBLE_COLLECTIONS_PATH=~/ansible_collections:~/.ansible/collections
-```
-
-### Build and install from source tarball
-
-```bash
-cd ~/ansible_collections/lantronix/lmos
-ansible-galaxy collection build
-ansible-galaxy collection install lantronix-lmos-1.0.0.tar.gz
 ```
 
 ## Inventory Configuration
@@ -160,30 +149,6 @@ This collection fixes the problem cleanly. The `lantronix.lmos.lmos` terminal pl
 `ansible.netcommon` through version 8.5.3 calls `ActionBase._parse_returned_data()` with the pre-2.20 signature, which raises a `TypeError` at runtime under ansible-core 2.20. Until `ansible.netcommon` ships a fix, use **ansible-core 2.19.x**.
 
 Tested against: ansible-core 2.16+ through 2.19.x, ansible.netcommon 8.5.3, Python 3.12.
-
-## Testing
-
-### Unit tests
-
-```bash
-cd ~/ansible_collections/lantronix/lmos
-ansible-test units --python 3.12
-```
-
-### Sanity tests
-
-```bash
-ansible-test sanity --python 3.12
-```
-
-### Live device tests
-
-Requires network access to an LMOS device. Edit `tests/live/inventory.yml` with your device details, then:
-
-```bash
-ansible-playbook -i tests/live/inventory.yml tests/live/test_lmos_live.yml
-ansible-playbook -i tests/live/inventory.yml tests/live/test_serial_port.yml
-```
 
 ## Support
 

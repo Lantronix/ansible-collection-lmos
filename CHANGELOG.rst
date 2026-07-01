@@ -4,6 +4,19 @@ Lantronix LMOS Collection Release Notes
 
 .. contents:: Topics
 
+v1.0.3
+======
+
+Minor Changes
+-------------
+
+- ``README.md`` -- removed the stale self-referential archive banner left over
+  from the migration off the personal fork.
+- ``README.md`` -- removed the "Build and install from source tarball" install
+  path; Automation Hub and GitHub clone cover supported customer installs.
+- ``README.md`` -- removed the ``Testing`` section (unit tests, sanity tests,
+  live device tests); this is contributor/CI documentation, not customer-facing.
+
 v1.0.2
 ======
 

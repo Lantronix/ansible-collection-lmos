@@ -3,3 +3,8 @@
 *.tar.gz
 __pycache__/
 *.pyc
+tests/output/
+.pm-os-status.md
+dist/
+venv/
+tests/live/

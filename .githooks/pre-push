@@ -15,6 +15,8 @@ fi
 
 # Patterns that should never appear in committed files
 BANNED_PATTERNS=(
+    'ansible_password:\s*"[^"{][^"YOUR][^"]{3,}"'
+    'ansible_password:\s*'"'"'[^'"'"'{][^'"'"'YOUR][^'"'"']{3,}'"'"
     # Private credentials and secrets (vault template vars like {{ vault_x }} are allowed)
     'ansible_ssh_pass:\s*"[^"{][^"YOUR][^"]{3,}"'
     'ansible_ssh_pass:\s*'"'"'[^'"'"'{][^'"'"'YOUR][^'"'"']{3,}'"'"

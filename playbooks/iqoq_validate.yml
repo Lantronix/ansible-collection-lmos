@@ -3,7 +3,7 @@
 #
 # Usage:
 #   ansible-playbook -i <device-ip>, playbooks/iqoq_validate.yml \
-#     -e "expected_lmos_version=6.7 expected_ucc_host=uplogix-control-center.gtm.merck.com"
+#     -e "expected_lmos_version=6.7 expected_ucc_host=ucc.example.com"
 #
 # Inventory variables required:
 #   ansible_user, ansible_ssh_pass (or ansible_ssh_private_key_file)
@@ -18,8 +18,6 @@
 - name: LMOS IQOQ Validation
   hosts: all
   gather_facts: false
-  collections:
-    - ansible.netcommon
   vars:
     ansible_connection: ansible.netcommon.network_cli
     ansible_network_os: lantronix.lmos.lmos

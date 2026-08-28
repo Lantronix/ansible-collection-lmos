@@ -1,0 +1,26 @@
+name: Sanity Tests
+on: [push, pull_request]
+jobs:
+  sanity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: ansible_collections/lantronix/lmos
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install ansible-core
+      - run: ansible-galaxy collection install ansible.netcommon -p .
+      - run: cd ansible_collections/lantronix/lmos && ansible-test sanity --python 3.11
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: ansible_collections/lantronix/lmos
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ansible-lint
+      - run: cd ansible_collections/lantronix/lmos && ansible-lint

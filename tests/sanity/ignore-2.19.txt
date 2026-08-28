@@ -1,2 +1,0 @@
-plugins/cliconf/lmos.py import-3.12
-plugins/terminal/lmos.py import-3.12

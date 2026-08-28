@@ -4,6 +4,24 @@ Lantronix LMOS Collection Release Notes
 
 .. contents:: Topics
 
+v1.0.4
+======
+
+Minor Changes
+-------------
+
+- ``.ansible-lint`` -- adopted the Red Hat certified-collection configuration
+  (``profile: production``, ``no-log-password`` in ``warn_list``); the lint
+  scope now covers ``playbooks/`` and sanity ignore files.
+- ``iqoq_validate.yml`` -- uses fully qualified collection names throughout
+  and a generic example hostname in the usage comment.
+- ``tests/config.yml`` -- declares ``python_requires`` (Python 3.9+).
+- Removed sanity ignore entries that are not permitted for certified
+  collections; the ``import`` sanity test now passes with ``ansible.netcommon``
+  installed.
+- CI: added sanity, lint, and Red Hat certification-checker workflows with
+  Dependabot tracking for GitHub Actions.
+
 v1.0.3
 ======
 

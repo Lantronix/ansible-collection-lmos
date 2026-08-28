@@ -1,0 +1,14 @@
+# gitleaks configuration: default ruleset plus a rule for Ansible inventory credential literals.
+[extend]
+useDefault = true
+
+[[rules]]
+id = "ansible-inventory-credential"
+description = "Ansible inventory or vars credential literal (ansible_password, ansible_ssh_pass, ansible_become_pass)"
+regex = '''(?i)ansible_(?:ssh_pass|become_pass|password|become_password)\s*[:=]\s*["']?([^"'\s{][^"'\s]{3,})'''
+secretGroup = 1
+[rules.allowlist]
+regexes = [
+  '''\{\{''',
+  '''(?i)(CHANGE_ME|YOUR_|example|placeholder|vault_|lookup\()''',
+]

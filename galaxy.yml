@@ -23,5 +23,15 @@ build_ignore:
   - .venv
   - .ansible
   - "tests*"
+  - .git
+  - .githooks
+  - .github
+  - .gitignore
+  - .gitleaks.toml
+  - .pm-os-status.md
+  - tests/output
+  - dist
+  - venv
+  - .pytest_cache
 dependencies:
   ansible.netcommon: ">=5.0.0"
